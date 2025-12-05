@@ -4,6 +4,7 @@
 Boule_Extrem ist eine einfache Website, die Ergebnisse von Boule-Turnieren übersichtlich darstellt. Die Seite enthält eine Hauptseite und mehrere Unterseiten für Termine und Ergebnisse. Jede Seite hat ein Banner, und die Ergebnisse werden in Tabellen angezeigt, die dynamisch aus CSV-Dateien geladen werden.
 
 ## Project Structure
+```text
 Boule_Extrem
 ├── css
 │ └── styles.css # Enthält die Styles für die Website
@@ -19,7 +20,7 @@ Boule_Extrem
 │ └── kreismeisterschaft-2026.csv
 ├── index.html # Hauptseite der Website
 └── README.md # Dokumentation für das Projekt
-
+```
 ## Hosting on GitHub Pages
 Um das Projekt auf GitHub Pages zu hosten, folge diesen Schritten:
 
