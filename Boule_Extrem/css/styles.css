@@ -179,16 +179,40 @@ nav {
     margin: 20px 0;
 }
 
+nav ul {
+    display: flex;          /* Buttons nebeneinander */
+    flex-wrap: wrap;        /* erlaubt Umbruch auf kleineren Bildschirmen */
+    gap: 12px;              /* Abstand zwischen allen Buttons (horizontal + vertikal) */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;    /* vertikal ausrichten */
+}
+
 nav a {
-    margin: 0 15px;
+    display: inline-block;
+    padding: 6px 14px;      /* kompakter Button */
     text-decoration: none;
-    color: #971616;
+    color: white;
+    background-color: #971616;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
+nav a:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Tabellenstil für Ergebnisse */
 table {
     width: 100%;
     border-collapse: collapse;
