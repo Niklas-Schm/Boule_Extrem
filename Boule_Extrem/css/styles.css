@@ -1,0 +1,241 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* Abstand zum Bildschirmrand */
+    padding: 20px;
+    /* sorgt dafür, dass Padding die Gesamtgröße berücksichtigt */
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #d0d0d8 ;
+    color: #971616;
+    /* vertikal 15px, horizontal 20px passend zum body-padding */
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Hintergrund bis zum Rand: erweitere die Breite um das doppelte Body-Padding
+       und ziehe das Element nach links, so bleibt der Inhalt mit dem Body
+       ausgerichtet, während der Hintergrund full-bleed ist. */
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    box-sizing: border-box;
+}
+
+/* Card + Accordion styles for the rules */
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+details.accordion {
+    margin-top: 12px;
+}
+
+summary.accordion-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: linear-gradient(180deg, #f7f7f7, #efefef);
+    border: 1px solid #e0e0e0;
+    font-weight: 600;
+}
+
+summary.accordion-summary:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(151,22,22,0.12);
+}
+
+.accordion-content {
+    padding: 12px 10px 0 10px;
+    color: #333;
+}
+
+/* Toggle label + arrow */
+summary.accordion-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.summary-label::before {
+    content: "Regelwerk ausklappen";
+}
+
+details[open] .summary-label::before {
+    content: "Regelwerk einklappen";
+}
+
+.summary-icon {
+    display: inline-block;
+    transition: transform 0.18s ease;
+    font-size: 1.1rem;
+    color: #333;
+    margin-left: 10px;
+}
+
+.summary-icon::before {
+    content: "▾"; /* down arrow */
+    display: inline-block;
+}
+
+details[open] .summary-icon {
+    transform: rotate(180deg); /* arrow points up when open */
+}
+
+/* Event and Calendar styles */
+.event-item {
+    padding: 12px;
+    background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
+    border-left: 4px solid #971616;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.event-item h4 {
+    margin-top: 0;
+    color: #971616;
+}
+
+.event-item p {
+    margin: 8px 0;
+}
+
+.calendar-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.calendar-table th {
+    background-color: #971616;
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.calendar-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    height: 50px;
+    word-wrap: break-word;
+}
+
+.calendar-table td:empty {
+    background-color: #fafafa;
+}
+
+/* Event day highlighting */
+.event-day {
+    background-color: #fff3cd;
+    font-weight: 600;
+}
+
+/* Holiday styling */
+.holiday {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .logo {
+        height: 70px;
+    }
+
+    nav {
+        margin: 10px 0;
+    }
+
+    header {
+        padding: 12px 16px;
+        width: calc(100% + 32px);
+        margin-left: -16px;
+    }
+}
+
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #971616;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #971616; /* dunkles Rot passend zu Header */
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* ungerade Zeilen hell */
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* gerade Zeilen dunkel */
+tr:nth-child(even) {
+    background-color: #e6e6e6; /* hellgrau */
+}
+
+/* Hover für jede Zeile */
+tr:hover {
+    background-color: #d1d1d1;
+}
+
+td:hover {
+    background-color: #16161633;
+}
+
+table, th, td {
+    border: 1px solid #ccc; /* dünner hellgrauer Rahmen */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+}

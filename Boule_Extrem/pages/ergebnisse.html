@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ergebnisse – Boule Extrem</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo-link">
+            <img src="../images/Boule_Extrem_silbe_no_bg.png" alt="Logo" class="logo">
+        </a>
+        <h1>Ergebnisse</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="termine.html">Termine</a></li>
+                <li><a href="ergebnisse.html">Ergebnisse</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Turnierergebnisse</h2>
+
+        <!-- Kreismeisterschaft -->
+        <section id="kreismeisterschaft" class="card">
+            <h3>Kreismeisterschaft</h3>
+            <p><strong>Datum:</strong> 5. Mai 2026</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platzierung</th>
+                        <th>Spieler</th>
+                        <th>Punkte</th>
+                    </tr>
+                </thead>
+                <tbody id="kreismeisterschaft-table">
+                    <tr>
+                        <td colspan="3" style="text-align:center;color:#999;">
+                            Lade Daten...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Weltmeisterschaft -->
+        <section id="weltmeisterschaft" class="card">
+            <h3>Weltmeisterschaft</h3>
+            <p><strong>Datum:</strong> 15. März 2026</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platzierung</th>
+                        <th>Spieler</th>
+                        <th>Punkte</th>
+                    </tr>
+                </thead>
+                <tbody id="weltmeisterschaft-table">
+                    <tr>
+                        <td colspan="3" style="text-align:center;color:#999;">
+                            Lade Daten...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Winterspiele -->
+        <section id="winterspiele" class="card">
+            <h3>Olympische Winterspiele</h3>
+            <p><strong>Datum:</strong> 14. Dezember 2025 – 28. Dezember 2025</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platzierung</th>
+                        <th>Spieler</th>
+                        <th>Punkte</th>
+                    </tr>
+                </thead>
+                <tbody id="winterspiele-table">
+                    <tr>
+                        <td colspan="3" style="text-align:center;color:#999;">
+                            Lade Daten...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Sommerspiele -->
+        <section id="sommerspiele" class="card">
+            <h3>Olympische Sommerspiele</h3>
+            <p><strong>Datum:</strong> 18. Juni 2026 – 22. Juni 2026</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platzierung</th>
+                        <th>Spieler</th>
+                        <th>Punkte</th>
+                    </tr>
+                </thead>
+                <tbody id="sommerspiele-table">
+                    <tr>
+                        <td colspan="3" style="text-align:center;color:#999;">
+                            Lade Daten...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Boule Extrem. Alle Rechte vorbehalten.</p>
+    </footer>
+
+
+    <!-- CSV Lade-Script -->
+    <script>
+    async function loadCSV(tableId, filePath) {
+        const tbody = document.getElementById(tableId);
+
+        try {
+            const response = await fetch(filePath);
+
+            if (!response.ok) {
+                tbody.innerHTML = `
+                    <tr><td colspan="3" style="text-align:center;color:#999;">Noch keine Ergebnisse verfügbar</td></tr>
+                `;
+                return;
+            }
+
+            const csvText = await response.text();
+            const lines = csvText.trim().split("\n");
+            const rows = lines.map(line => line.split(","));
+
+            tbody.innerHTML = "";
+
+            rows.slice(1).forEach(cols => {
+                const tr = document.createElement("tr");
+                cols.forEach(col => {
+                    const td = document.createElement("td");
+                    td.textContent = col.trim();
+                    tr.appendChild(td);
+                });
+                tbody.appendChild(tr);
+            });
+
+            if (tbody.children.length === 0) {
+                tbody.innerHTML = `
+                    <tr><td colspan="3" style="text-align:center;color:#999;">Noch keine Ergebnisse verfügbar</td></tr>
+                `;
+            }
+
+        } catch (error) {
+            console.error("Fehler beim Laden:", filePath, error);
+            tbody.innerHTML = `
+                <tr><td colspan="3" style="text-align:center;color:#999;">Fehler beim Laden</td></tr>
+            `;
+        }
+    }
+
+    // Tabellen automatisch mit CSV füllen
+    loadCSV("kreismeisterschaft-table", "data/kreismeisterschaft-2026.csv");
+    loadCSV("winterspiele-table", "data/winterspiele-2025.csv");
+    loadCSV("weltmeisterschaft-table", "data/weltmeisterschaft-2026.csv");
+    loadCSV("sommerspiele-table", "data/sommerspiele-2026.csv");
+    </script>
+
+
+</body>
+</html>
