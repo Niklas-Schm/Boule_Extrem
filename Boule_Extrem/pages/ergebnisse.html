@@ -27,7 +27,7 @@
         <!-- Kreismeisterschaft -->
         <section id="kreismeisterschaft" class="card">
             <h3>Kreismeisterschaft</h3>
-            <p><strong>Datum:</strong> 5. Mai 2026</p>
+            <p><strong>Jahr:</strong> 2025</p>
             <table>
                 <thead>
                     <tr>
@@ -49,7 +49,7 @@
         <!-- Weltmeisterschaft -->
         <section id="weltmeisterschaft" class="card">
             <h3>Weltmeisterschaft</h3>
-            <p><strong>Datum:</strong> 15. März 2026</p>
+            <p><strong>Jahr:</strong> 2025</p>
             <table>
                 <thead>
                     <tr>
@@ -68,10 +68,32 @@
             </table>
         </section>
 
+        <!-- Sommerspiele -->
+        <section id="sommerspiele" class="card">
+            <h3>Olympische Sommerspiele</h3>
+            <p><strong>Jahr:</strong> 2025</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platzierung</th>
+                        <th>Spieler</th>
+                        <th>Punkte</th>
+                    </tr>
+                </thead>
+                <tbody id="sommerspiele-table">
+                    <tr>
+                        <td colspan="3" style="text-align:center;color:#999;">
+                            Lade Daten...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
         <!-- Winterspiele -->
         <section id="winterspiele" class="card">
             <h3>Olympische Winterspiele</h3>
-            <p><strong>Datum:</strong> 14. Dezember 2025 – 28. Dezember 2025</p>
+            <p><strong>Jahr:</strong> 2025</p>
             <table>
                 <thead>
                     <tr>
@@ -90,27 +112,6 @@
             </table>
         </section>
 
-        <!-- Sommerspiele -->
-        <section id="sommerspiele" class="card">
-            <h3>Olympische Sommerspiele</h3>
-            <p><strong>Datum:</strong> 18. Juni 2026 – 22. Juni 2026</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Platzierung</th>
-                        <th>Spieler</th>
-                        <th>Punkte</th>
-                    </tr>
-                </thead>
-                <tbody id="sommerspiele-table">
-                    <tr>
-                        <td colspan="3" style="text-align:center;color:#999;">
-                            Lade Daten...
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
     </main>
 
     <footer>
@@ -164,10 +165,10 @@
     }
 
     // Tabellen automatisch mit CSV füllen
-    loadCSV("kreismeisterschaft-table", "data/kreismeisterschaft-2026.csv");
+    loadCSV("kreismeisterschaft-table", "data/kreismeisterschaft-2025.csv");
     loadCSV("winterspiele-table", "data/winterspiele-2025.csv");
-    loadCSV("weltmeisterschaft-table", "data/weltmeisterschaft-2026.csv");
-    loadCSV("sommerspiele-table", "data/sommerspiele-2026.csv");
+    loadCSV("weltmeisterschaft-table", "data/weltmeisterschaft-2025.csv");
+    loadCSV("sommerspiele-table", "data/sommerspiele-2025.csv");
     </script>
 
 
