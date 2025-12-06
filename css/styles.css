@@ -189,3 +189,64 @@ td:hover {
     font-weight: bold;
     border: 1px solid #e6c96a;   /* feiner gelblicher Rahmen */
 }
+
+/* =========================
+   Responsive Kalender
+   ========================= */
+
+/* Grundlayout */
+.calendar-table {
+    table-layout: fixed;      /* erzwingt gleiche Breite */
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Zellen */
+.calendar-table td,
+.calendar-table th {
+    height: 70px;             /* feste Höhe (kannst du anpassen) */
+    width: 14.28%;            /* exakt 100% / 7 Spalten */
+    box-sizing: border-box;
+    vertical-align: middle;   /* Inhalt vertikal mittig */
+    position: relative;
+    overflow: hidden;         /* verhindert Aufblähen */
+    padding: 6px;             /* kompakteres Padding */
+}
+
+/* Sehr langer Text (z.B. Feiertage) → kleinerer Font */
+.calendar-table td.holiday {
+    font-size: 0.75rem;
+    line-height: 1.1;
+}
+
+/* Event-Tage gelb hinterlegt */
+.event-day {
+    background-color: #fff3cd !important;
+    font-weight: bold;
+}
+
+/* Feiertage in Rot */
+.holiday {
+    background-color: #f8d7da !important;
+    color: #721c24;
+    font-weight: bold;
+}
+
+/* Responsiv für sehr kleine Displays */
+@media (max-width: 600px) {
+    .calendar-table td,
+    .calendar-table th {
+        height: 55px;  /* kleinere Zellen */
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .calendar-table td,
+    .calendar-table th {
+        height: 45px;
+        font-size: 0.75rem;
+    }
+}
+
+
