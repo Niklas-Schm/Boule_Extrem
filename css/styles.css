@@ -180,17 +180,6 @@ td:hover {
 }
 
 /* =========================
-   Tabellen für Kalender
-   ========================= */
-/* Hervorhebung von Event-Tagen im Kalender */
-.event-day {
-    background-color: #fff3cd;   /* sanftes Gelb */
-    color: #7a5a00;              /* etwas dunklerer Text für Kontrast */
-    font-weight: bold;
-    border: 1px solid #e6c96a;   /* feiner gelblicher Rahmen */
-}
-
-/* =========================
    Responsive Kalender
    ========================= */
 
@@ -221,13 +210,13 @@ td:hover {
 
 /* Event-Tage gelb hinterlegt */
 .event-day {
-    background-color: #fff3cd !important;
+    background-color: #fff3cd;
     font-weight: bold;
 }
 
 /* Feiertage in Rot */
 .holiday {
-    background-color: #f8d7da !important;
+    background-color: #f8d7da;
     color: #721c24;
     font-weight: bold;
 }
