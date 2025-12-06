@@ -178,3 +178,14 @@ td:hover {
         font-size: 0.8rem;
     }
 }
+
+/* =========================
+   Tabellen für Kalender
+   ========================= */
+/* Hervorhebung von Event-Tagen im Kalender */
+.event-day {
+    background-color: #fff3cd;   /* sanftes Gelb */
+    color: #7a5a00;              /* etwas dunklerer Text für Kontrast */
+    font-weight: bold;
+    border: 1px solid #e6c96a;   /* feiner gelblicher Rahmen */
+}
